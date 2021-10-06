@@ -16,3 +16,4 @@
 - formal language/process calculus model of oscilatore -> reachability analysis
 - summarise large molecule imaging techniques -> structural and stability
 - virtual experiment software, round up examples of good UX for scientists e.g. [Simulated Western Blots](https://www.digitalbiologist.com/blog/2015/11/the-central-role-of-user-experience-design-in-scientific-modeling.html)
+- kombucha with extra enzymes
