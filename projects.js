@@ -2,7 +2,7 @@
 //
 //   thread  "euc" | "wattle" | "waratah"   which colour dot it gets
 //   title   project name
-//   year    e.g. "2025" or "2023–24"
+//   year    e.g. "2025" or "2021–2023" (en dash for ranges)
 //   blurb   one line: what it was and what changed because of it
 //   link    URL (optional; without one, the card isn't clickable)
 //   image   path to an image, e.g. "images/hot-sauce.jpg" (optional)
@@ -14,20 +14,17 @@
 // most want seen first.
 
 const PROJECTS = [
-  { thread: "euc", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "tall" },
-  { thread: "wattle", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "wide" },
-  { thread: "waratah", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "none" },
-  { thread: "euc", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "square" },
-  { thread: "wattle", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "tall" },
-  { thread: "waratah", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "square" },
-  { thread: "euc", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "none" },
-  { thread: "wattle", title: "[Project title]", year: "[Year]", blurb: "[One line: what it was and what changed because of it]", link: "#", shape: "wide" },
+  { thread: "euc", title: "sAibr | Solentropy", year: "2026", blurb: "Reduced interview processing time from days to minutes. Reports now contain direct links to primary sources.", shape: "tall" },
+  { thread: "wattle", title: "Babel AI", year: "2026", blurb: "A creative project communicating AI use patterns through Anthropic's newly published dataset.", shape: "wide" },
+  { thread: "waratah", title: "LanMan", year: "2026", blurb: "Data management and evidence-backed decision support for land stewardship.", shape: "none" },
+  { thread: "euc", title: "Research Data Scientist", year: "2021–2023", blurb: "Developed ML algorithms for a soil measurement device.", shape: "square" },
+  { thread: "wattle", title: "Inside a Drop of Saliva", year: "2026", blurb: "An interactive installation at RMIT's Discovery to Device facility.", shape: "tall" },
 ];
 
 const THREAD_NAMES = {
-  euc: "[Thread one]",
-  wattle: "[Thread two]",
-  waratah: "[Thread three]",
+  euc: "Data",
+  wattle: "Creative projects",
+  waratah: "Biology",
 };
 
 (() => {
@@ -35,6 +32,7 @@ const THREAD_NAMES = {
 
   // Rough relative height of each card, used to keep the columns even.
   const SHAPE_HEIGHT = { tall: 1.25, square: 1, wide: 0.625, none: 0 };
+  const BAND_HEIGHT = { tall: 0.38, square: 0.28, wide: 0.21, none: 0 }; // no image yet
   const BODY_HEIGHT = 0.5;
 
   function el(tag, className, text) {
@@ -57,7 +55,7 @@ const THREAD_NAMES = {
       img.loading = "lazy";
       card.append(img);
     } else if (shape !== "none") {
-      const ph = el("div", `project-image placeholder shape-${shape}`, "[project image]");
+      const ph = el("div", `project-image placeholder shape-${shape}`);
       ph.setAttribute("aria-hidden", "true");
       card.append(ph);
     }
@@ -68,7 +66,7 @@ const THREAD_NAMES = {
     body.append(meta, el("h2", "project-title", p.title), el("p", "project-blurb", p.blurb));
     card.append(body);
     item.append(card);
-    return { node: item, height: (SHAPE_HEIGHT[shape] ?? 1) + BODY_HEIGHT };
+    return { node: item, height: ((p.image ? SHAPE_HEIGHT : BAND_HEIGHT)[shape] ?? 0.5) + BODY_HEIGHT };
   }
 
   const cards = PROJECTS.map(buildCard);

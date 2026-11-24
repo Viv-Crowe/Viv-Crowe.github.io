@@ -152,6 +152,12 @@ h2 {
   border-radius: var(--radius-card);
 }
 
+/* Without a photo, the card is a single narrower column. */
+.card:not(:has(.portrait)) {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 40rem;
+}
+
 .card-text {
   display: flex;
   flex-direction: column;
@@ -164,6 +170,13 @@ h2 {
   font-size: clamp(2.25rem, 5vw, 3.25rem);
   line-height: 1.05;
   max-width: 18ch;
+}
+
+.lede {
+  margin: -0.5rem 0 0;
+  max-width: 40ch;
+  font-size: 1.25rem;
+  color: var(--text-soft);
 }
 
 .timeline {
@@ -376,6 +389,11 @@ a.project-card:focus-visible {
 .shape-tall { aspect-ratio: 4 / 5; }
 .shape-square { aspect-ratio: 1; }
 .shape-wide { aspect-ratio: 16 / 10; }
+
+/* Without a real image, the panel is a short colour band, still staggered. */
+.placeholder.shape-tall { aspect-ratio: auto; height: 8rem; }
+.placeholder.shape-square { aspect-ratio: auto; height: 6rem; }
+.placeholder.shape-wide { aspect-ratio: auto; height: 4.5rem; }
 
 .project-body {
   display: flex;
