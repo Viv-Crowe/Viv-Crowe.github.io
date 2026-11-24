@@ -15,10 +15,10 @@
 
 const PROJECTS = [
   { thread: "euc", title: "sAibr | Solentropy", year: "2026", blurb: "Reduced interview processing time from days to minutes. Reports now contain direct links to primary sources.", shape: "tall" },
-  { thread: "wattle", title: "Babel AI", year: "2026", blurb: "A creative project communicating AI use patterns through Anthropic's newly published dataset.", shape: "wide" },
+  { thread: "wattle", title: "Babel AI", year: "2026", blurb: "A creative project communicating AI use patterns through Anthropic's independent research dataset.", shape: "wide" },
   { thread: "waratah", title: "LanMan", year: "2026", blurb: "Data management and evidence-backed decision support for land stewardship.", shape: "none" },
-  { thread: "euc", title: "Research Data Scientist", year: "2021–2023", blurb: "Developed ML algorithms for a soil measurement device.", shape: "square" },
-  { thread: "wattle", title: "Inside a Drop of Saliva", year: "2026", blurb: "An interactive installation at RMIT's Discovery to Device facility.", shape: "tall" },
+  { thread: "euc", title: "ChrysaLabs", year: "2021–2023", blurb: "Developed ML algorithms for a soil measurement device.", shape: "square" },
+  { thread: "wattle", title: "Inside a Drop of Saliva", year: "2026", blurb: "An interactive installation at RMIT's Discovery to Device biosensor manufacturing facility.", shape: "tall" },
 ];
 
 const THREAD_NAMES = {
