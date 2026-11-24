@@ -1,15 +1,9 @@
-## About
+# vivcrowe.com
 
-Hi there ! I'm a young statistician interested in the chemistry of life. Here's what I'm up to these days...
+Source for [www.vivcrowe.com](https://www.vivcrowe.com), served by GitHub Pages.
 
-📚 **Reading:** Chaos: The Making of A New Science
+Plain HTML, CSS and JS, with no build step. Open `index.html` in a browser to preview.
 
-🎓 **Learning:** Mathematical Statistics, Reinforcement Learning
-
-👩‍💻 **Projects:** RL control algorithm for a mushroom fruiting chamber
-
-🌾 **Cultivating:** Worms (for compost)
-
-⏳ **Fermenting:** Hot sauce from homegrown Cayennes
-
-🎷 **Listening:** Clutchy Hopkins
+- `index.html`: the landing card
+- `style.css`: palette, type and layout
+- `projects.html` + `projects.js`: the project gallery; add projects to the list at the top of `projects.js`
