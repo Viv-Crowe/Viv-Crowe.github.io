@@ -1,1 +1,5 @@
 .DS_Store
+
+# Design source files (not for publishing)
+*.af
+*.af~lock~

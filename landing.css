@@ -1,0 +1,130 @@
+/* Landing page, rebuilt from docs/design files/landing-page.pdf (1536 x 864 artboard). */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #fff;
+  color: #000;
+  font-family: "Lexend", system-ui, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  padding: 2rem 1.25rem 5rem;
+}
+
+.intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.125rem;
+}
+
+.intro-text {
+  display: flex;
+  flex-direction: column;
+  width: 21.875rem;
+}
+
+.intro-text p {
+  max-width: 21rem;
+}
+
+h1 {
+  margin: 0 0 0.25rem;
+  font-size: 3.125rem; /* 50pt in the design */
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.intro-text p {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.say-hi {
+  align-self: flex-end;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+}
+
+.say-hi:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.say-hi:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.portrait {
+  display: block;
+  margin-top: 0.8125rem; /* lines the photo up with the heading's capitals */
+  width: 17.625rem;
+  height: auto;
+  aspect-ratio: 278 / 371;
+  object-fit: cover;
+}
+
+.explore {
+  position: fixed;
+  right: 3rem;
+  bottom: 3.25rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  color: #737373;
+}
+
+.explore span {
+  text-transform: uppercase;
+}
+
+.explore em {
+  font-family: Arial, sans-serif;
+  font-size: 0.8125rem;
+}
+
+/* Narrow screens: photo above the text, corner note drops into the flow. */
+@media (max-width: 42rem) {
+  body {
+    display: block;
+    place-items: normal;
+    padding-bottom: 2rem;
+  }
+
+  .intro {
+    flex-direction: column-reverse;
+    gap: 1.5rem;
+  }
+
+  .intro-text {
+    width: 100%;
+  }
+
+  .portrait {
+    margin-top: 0;
+    width: 10rem;
+  }
+
+  .explore {
+    position: static;
+    align-items: flex-end;
+    margin-top: 2.5rem;
+  }
+}
