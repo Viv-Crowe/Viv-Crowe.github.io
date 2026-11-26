@@ -1,5 +1,6 @@
 .DS_Store
 
-# Design source files (not for publishing)
+# Design files: kept locally for reference, never committed or published
+docs/design files/
 *.af
 *.af~lock~
